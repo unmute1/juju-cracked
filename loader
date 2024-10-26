@@ -1,7 +1,7 @@
 local is_solara = string.find(identifyexecutor(), "Solara")
 local game_id = game.GameId
 
--- Remove external URL references to avoid key issues
+-- Define an empty games table to avoid external URL issues
 local games = {}
 
 if game_id == 113491250 then
@@ -19,4 +19,6 @@ if game_id == 113491250 then
     return
 end
 
--- No loadstring call to avoid external dependencies
+-- Execute without any loadstring calls
+print("Script is running without key checks.")
+-- Here, you can add any core functionality you need without calling external URLs.
