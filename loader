@@ -4,6 +4,12 @@ local game_id = game.GameId
 -- Define an empty games table to avoid external URL issues
 local games = {}
 
+-- Placeholder function for core functionality
+local function coreFunctionality()
+    print("Core functionality is executing.")
+    -- Add your core logic here
+end
+
 if game_id == 113491250 then
     if not getfflag then
         getfflag = function() return false end
@@ -19,6 +25,7 @@ if game_id == 113491250 then
     return
 end
 
--- Execute without any loadstring calls
-print("Script is running without key checks.")
--- Here, you can add any core functionality you need without calling external URLs.
+-- Execute core functionality
+coreFunctionality()
+
+print("Script has finished executing.")
