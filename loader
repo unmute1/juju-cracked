@@ -1,14 +1,8 @@
 local is_solara = string.find(identifyexecutor(), "Solara")
 local game_id = game.GameId
 
--- Removed URLs to avoid key check errors
-local games = is_solara and {
-    [4348829796] = "",
-    [1008451066] = "",
-} or {
-    [1008451066] = "",
-    [4348829796] = ""
-}
+-- Remove external URL references to avoid key issues
+local games = {}
 
 if game_id == 113491250 then
     if not getfflag then
@@ -21,10 +15,8 @@ if game_id == 113491250 then
         queue_on_teleport(`repeat task.wait() until game:IsLoaded(); task.wait(2.5)\n if not getfflag then getgenv().getfflag = function() return true end end\n`)
         task.wait(1)
         game:GetService("TeleportService"):Teleport(game.PlaceId)
-    else
-        -- Skip loadstring here as well
     end
     return
 end
 
--- No loadstring called here either to avoid external key checks
+-- No loadstring call to avoid external dependencies
